@@ -28,7 +28,7 @@ class Player:
 
     def play(self, card):
         if self.state == GameState.PLAY:
-            if (card is self.hero) or (card in self.hand):
+            if (card is self.leader) or (card in self.hand):
                 self.game.queue_action(self, Play(card))
             else:
                 log.error("你选择的牌%s 无法打出", card)
